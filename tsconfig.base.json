@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nx-secretarium-website/store/ui-shared": [
+        "libs/store/ui-shared/src/index.ts"
+      ],
+      "@nx-secretarium-website/store/media": ["libs/store/media/src/index.ts"],
+      "@nx-secretarium-website/store/ui-data": [
+        "libs/store/ui-data/src/index.ts"
+      ],
+      "@nx-secretarium-website/store/ui-media": [
+        "libs/store/ui-media/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,345 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+
+@font-face {
+  font-family: 'Aller';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Aller'), url('../fonts/Aller_Rg.woff') format('woff');
+}
+
+body,
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Aller', sans-serif;
+}
+
+.top-24 {
+  top: 6rem;
+}
+
+.focus-ring {
+  outline: none;
+  @apply shadow-outline border-blue-400;
+}
+
+/* purgecss start ignore */
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.aspect-ratio-square {
+  padding-top: 100%;
+}
+
+.aspect-ratio-16-9 {
+  padding-top: 56.25%;
+}
+
+.aspect-ratio-4-3 {
+  padding-top: 75%;
+}
+
+.aspect-ratio-21-9 {
+  padding-top: 42.86%;
+}
+
+.anchor {
+  @apply text-gray-500 absolute ml-2 pr-1 underline;
+}
+
+.anchor::after {
+  content: '#';
+  visibility: hidden;
+}
+
+h1:hover .anchor::after,
+h2:hover .anchor::after,
+h3:hover .anchor::after,
+h4:hover .anchor::after,
+h5:hover .anchor::after,
+h6:hover .anchor::after {
+  visibility: visible;
+}
+
+/* Algolia v3 overrides */
+:root {
+  --docsearch-highlight-color: #1965e0;
+  --docsearch-primary-color: #0052cc;
+  --docsearch-searchbox-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  --ifm-z-index-fixed: 1000;
+  --docsearch-searchbox-height: 48px;
+  --docsearch-icon-stroke-width: 1.4;
+  --hover-overlay: rgba(0, 0, 0, 0.05);
+  --fds-animation-fade-in: cubic-bezier(0, 0, 1, 1);
+  --fds-animation-fade-out: cubic-bezier(0, 0, 1, 1);
+}
+
+.DocSearch--active #__next {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+.DocSearch-SearchBar {
+  @apply mb-2;
+}
+
+.DocSearch-Form {
+  @apply rounded-md;
+}
+
+.DocSearch-Search-Icon {
+  height: 20px;
+  width: 20px;
+  stroke-width: 1.6;
+  @apply text-gray-600;
+}
+
+/* Custom Remark alerts */
+.alert {
+  @apply p-4 border-l-4  mb-4;
+}
+
+.alert.alert-danger {
+  @apply bg-red-50 text-red-800 border-red-500;
+}
+
+.alert.alert-success {
+  @apply bg-green-50 text-green-700 border-green-500;
+}
+
+.alert.alert-warning {
+  @apply bg-yellow-50 text-yellow-800 border-yellow-500;
+}
+
+.alert.alert-info {
+  @apply bg-blue-50 text-blue-800 border-blue-500;
+}
+
+.font-mono {
+  font-family: monospace;
+}
+
+details > p > a,
+details > ul > li > a,
+details > ol > li > a,
+details > ul > li a,
+details > ol > li a,
+details > table > tbody > tr > td > a {
+  @apply text-blue-600 font-semibold transition-colors duration-150 ease-out;
+}
+
+details > p > a:hover,
+details > ul > li > a:hover,
+details > ol > li > a:hover,
+details > table > tbody > tr > td > a:hover {
+  @apply text-blue-800 transition-colors duration-150 ease-out;
+}
+
+details strong {
+  @apply font-bold;
+}
+
+details > p,
+details > ul,
+details > ol,
+details > blockquote,
+details > pre,
+details > div > .code-block {
+  @apply mb-4;
+}
+details > ul,
+details > ul > li > ul {
+  @apply ml-8 list-disc;
+}
+
+details > ol {
+  @apply ml-8 list-decimal;
+}
+details {
+  @apply p-3 bg-gray-50 rounded-md border mb-3  text-sm leading-5 shadow-sm;
+}
+details > p {
+  @apply mt-2;
+}
+details > summary {
+  @apply font-bold text-base;
+}
+
+.article-image {
+  height: 300px;
+}
+
+.section-data-processing {
+  background-color: #DD003B;
+}
+
+.circle {
+  background-color:#fff;
+  border: 2px solid rgb(226, 27, 66);    
+  height: 15px;
+  border-radius: 50%;
+  width: 15px;
+}
+
+/* Carousel stying */
+
+@tailwind utilities;
+
+@layer utilities {
+  .carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+  }
+
+  .carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+  }
+
+  #carousel-1:checked ~ .control-1,
+  #carousel-2:checked ~ .control-2,
+  #carousel-3:checked ~ .control-3,
+  #carousel-4:checked ~ .control-4 {
+    display: block;
+  }
+
+  .carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .carousel-indicators {
+      display: none;
+    }
+  }
+  
+  #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+  #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+  #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
+  #carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet {
+      @apply bg-red-600;
+  }
+}
+
+/** Checkbox*/
+
+.checkbox__item {
+  font-size: 1.1875rem;
+  line-height: 1.31579;
+  font-weight: 400;
+  display: block;
+  position: relative;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding-left: 40px;
+  clear: left;
+}
+
+.checkbox__input {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  left: -2px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  opacity: 0;
+}
+
+.checkbox__label {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 15px 5px;
+  cursor: pointer;
+  touch-action: manipulation;
+  font-size: 1.1875rem;
+  line-height: 1.31579;
+  font-weight: 400;
+}
+
+.checkbox__label:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  background: transparent;
+  border-radius: 0.4rem;
+}
+
+.checkbox__label:after {
+  background: transparent;
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 0;
+  height: 0;
+  border: 10px solid #DD003B;
+  border-radius: 50%;
+  opacity: 0;
+  background: #DD003B;
+}
+
+.checkbox__input:checked+.checkbox__label:after {
+  opacity: 1;
+}
+
+textarea:focus {
+  outline: 1px solid #DD003B;
+}
+
+.open{
+  left: 59.2%;
+  top: 0;
+}
+
+.close {
+  right: 30px;
+}
+
+.input-error {
+  border-color: #dd0038;
+}
+
+.error {
+  color: #DD0038;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
